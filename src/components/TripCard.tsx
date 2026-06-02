@@ -6,12 +6,22 @@ interface TripCardProps {
 
 function TripCard({ trip }: TripCardProps) {
   return (
-    <div>
-      <h3>{trip.destino}</h3>
-      <p>Fecha: {trip.fecha}</p>
-      <p>Presupuesto: {trip.presupuesto} €</p>
-      <p>{trip.descripcion}</p>
-      <hr />
+    <div className="bg-white rounded-xl shadow-md p-6 mb-4">
+      <h3 className="text-2xl font-bold text-blue-600">
+        {trip.destino}
+      </h3>
+
+      <p className="mt-2">
+        <strong>Fecha:</strong> {trip.fecha}
+      </p>
+
+      <p>
+        <strong>Presupuesto:</strong> {trip.presupuesto} €
+      </p>
+
+      <p className="mt-2 text-gray-600">
+        {trip.descripcion}
+      </p>
     </div>
   );
 }
