@@ -6,9 +6,12 @@ import NewTrip from "./pages/NewTrip";
 import Stats from "./pages/Stats";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
+import { TripContext } from "./context/TripContext";
+import { mockTrips } from "./utils/mockTrips";
 
 function App() {
   return (
+  <TripContext.Provider value={{ trips: mockTrips }}>
     <BrowserRouter>
       <Navbar />
 
@@ -20,7 +23,8 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
-  );
+  </TripContext.Provider>
+);
 }
 
 export default App;

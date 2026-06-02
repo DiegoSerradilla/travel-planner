@@ -1,12 +1,14 @@
-import { mockTrips } from "../utils/mockTrips";
+import { useTrips } from "../hooks/useTrips";
 import TripCard from "../components/TripCard";
 
 function Trips() {
+  const { trips } = useTrips();
+
   return (
     <div>
       <h1>Mis Viajes</h1>
 
-      {mockTrips.map((trip) => (
+      {trips.map((trip) => (
         <TripCard key={trip.id} trip={trip} />
       ))}
     </div>
